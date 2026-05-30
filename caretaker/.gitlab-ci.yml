@@ -1,0 +1,25 @@
+stages:
+  - build
+  - test
+  - deploy
+
+build:
+  stage: build
+  script:
+    - echo "Building the app..."
+
+test:
+  stage: test
+  script:
+    - echo "Running tests..."
+
+deploy:
+  stage: deploy
+  script:
+    - echo "Deploying to production..."
+    # Add your actual deploy commands here (e.g., rsync, kubectl, etc.)
+  only:
+    - main  # Only deploy on pushes to main branch
+  environment:
+    name: production
+    url: https://your-app-url.com

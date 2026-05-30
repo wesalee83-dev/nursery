@@ -1,0 +1,31 @@
+{
+  "id": "0100",
+  "state": "incubating",
+  "species": "default",
+  "element": "water",
+  "growth": {
+    "value": 97.7175,
+    "rate": 0.003,
+    "multispark": 228,
+    "multiplier": 0.1,
+    "_chaoticTicks": 8
+  },
+  "pulse": {
+    "multiplier": 1
+  },
+  "quarks": {
+    "order": 0.16724475129517233,
+    "focus": 0.02769909275818262,
+    "chaos": 0.15060114508130917,
+    "entropy": 0.13064346257667706
+  },
+  "traits": {
+    "chaotic": true
+  },
+  "created": 1777437943463,
+  "lastAsteroidPulse": 15627,
+  "timestamp": 1779054569888,
+  "type": "heartbeat",
+  "stage": "seed",
+  "trait": "entropy_drift"
+}

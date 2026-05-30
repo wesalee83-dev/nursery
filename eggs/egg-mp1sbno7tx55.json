@@ -1,0 +1,27 @@
+{
+  "id": "egg-mp1sbno7tx55",
+  "code": null,
+  "element": "wild",
+  "growth": {
+    "value": 37.6485,
+    "rate": 0.003,
+    "multispark": 24,
+    "multiplier": 5,
+    "_chaoticTicks": 2
+  },
+  "created": 1778539207831,
+  "gifts": [],
+  "traits": {
+    "chaotic": true
+  },
+  "lastAsteroidPulse": 15636,
+  "timestamp": 1779054569888,
+  "type": "heartbeat",
+  "stage": "seed",
+  "quarks": {
+    "chaos": 0.4456558673099659,
+    "order": 0.2583851164460828,
+    "entropy": 0.04794665645009455,
+    "focus": 0.495557143862961
+  }
+}

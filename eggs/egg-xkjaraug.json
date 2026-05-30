@@ -1,0 +1,30 @@
+{
+  "id": "egg-xkjaraug",
+  "state": "incubating",
+  "species": "default",
+  "growth": {
+    "value": 47471,
+    "rate": 1,
+    "multispark": 397,
+    "multiplier": 5,
+    "_chaoticTicks": 1
+  },
+  "pulse": {
+    "multiplier": 1
+  },
+  "traits": {
+    "chaotic": true
+  },
+  "created": 1777343259016,
+  "lastAsteroidPulse": 15640,
+  "timestamp": 1779054569888,
+  "type": "heartbeat",
+  "stage": "sapling",
+  "quarks": {
+    "chaos": 0.07158434360384304,
+    "order": 0.11776739465675931,
+    "entropy": 0.39949739283725055,
+    "focus": 0.03689373594884714
+  },
+  "trait": "entropy_drift"
+}

@@ -1,0 +1,30 @@
+{
+  "id": "egg-yi90q1r8",
+  "state": "incubating",
+  "species": "default",
+  "growth": {
+    "value": 31605.5,
+    "rate": 1,
+    "multispark": 326,
+    "multiplier": 5,
+    "_chaoticTicks": 7
+  },
+  "pulse": {
+    "multiplier": 1
+  },
+  "traits": {
+    "chaotic": true
+  },
+  "created": 1777402541380,
+  "lastAsteroidPulse": 15642,
+  "timestamp": 1779054569888,
+  "type": "heartbeat",
+  "stage": "sapling",
+  "quarks": {
+    "chaos": 0.5078943401466922,
+    "order": 0.15178745652454495,
+    "entropy": 0.8333935622958139,
+    "focus": 0.6156845280593358
+  },
+  "trait": "entropy_drift"
+}

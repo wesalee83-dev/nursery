@@ -1,0 +1,28 @@
+{
+  "id": "0420",
+  "code": "0420",
+  "element": "Sigil-0420",
+  "growth": {
+    "value": 37.6245,
+    "rate": 0.003,
+    "multispark": 24,
+    "multiplier": 0.1,
+    "_chaoticTicks": 2
+  },
+  "created": 1778539207806,
+  "gifts": [],
+  "traits": {
+    "chaotic": true
+  },
+  "lastAsteroidPulse": 15628,
+  "timestamp": 1779054569888,
+  "type": "heartbeat",
+  "stage": "seed",
+  "quarks": {
+    "chaos": 0.44758215648751826,
+    "order": 0.8540131426206149,
+    "entropy": 0.835640428857197,
+    "focus": 0.15250884811492071
+  },
+  "trait": "entropy_drift"
+}

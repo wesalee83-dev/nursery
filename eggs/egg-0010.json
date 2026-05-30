@@ -1,0 +1,29 @@
+{
+  "id": "egg-0010",
+  "element": "air",
+  "stage": "sprout",
+  "growth": {
+    "value": 2754.5,
+    "multiplier": 5,
+    "timestamp": 1777272822929,
+    "rate": 1,
+    "multispark": 33,
+    "_chaoticTicks": 8
+  },
+  "quarks": {
+    "chaos": 0.7032256747332306,
+    "order": 0.18189138467899235,
+    "entropy": 0.5187653041300554,
+    "focus": 0.18192354793065696
+  },
+  "trait": "entropy_drift",
+  "logs": [],
+  "lastAsteroidPulse": 15632,
+  "timestamp": 1779054569888,
+  "type": "heartbeat",
+  "traits": {
+    "chaotic": true
+  },
+  "state": "ascending",
+  "ascensions": 1
+}

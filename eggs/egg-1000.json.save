@@ -1,0 +1,18 @@
+{
+  "id": "egg-1000",
+  "element": "fire",
+  "stage": "seed",
+  "growth": {
+    "value": 1,
+    "multiplier": 1,
+    "timestamp": 0
+  },
+  "quarks": {
+    "chaos": 0.7,
+    "order": 0.3,
+    "entropy": 0.5,
+    "focus": 0.5
+  },
+  "trait": null,
+  "logs": []
+}

@@ -1,0 +1,17 @@
+{
+  "id": "egg-unique-name",
+  "type": "seed | species | module | agent | concept",
+  "created": "2026-05-16",
+  "lastModified": "2026-05-16",
+  "stage": "seed | sprout | sapling | young-tree",
+  "title": "Human readable title",
+  "description": "One paragraph summary",
+  "caretaker": "Stoned-Willey | Trillian | Oscar | Triad",
+  "tags": ["evolution", "creative", "infrastructure"],
+  "metadata": {
+    "version": "0.1",
+    "status": "active"
+  },
+  "connections": [],
+  "data": {}
+}

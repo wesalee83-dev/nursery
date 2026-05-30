@@ -1,0 +1,1 @@
+/home/wespc/root-project/MEMORY.md

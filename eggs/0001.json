@@ -1,0 +1,31 @@
+{
+  "id": "0001",
+  "state": "incubating",
+  "species": "default",
+  "element": "earth",
+  "growth": {
+    "value": 97.69275,
+    "rate": 0.003,
+    "multispark": 233,
+    "multiplier": 0.1,
+    "_chaoticTicks": 2
+  },
+  "pulse": {
+    "multiplier": 1
+  },
+  "quarks": {
+    "order": 0.7266618602824774,
+    "entropy": 0.8703377389323163,
+    "chaos": 0.42640508891608814,
+    "focus": 0.1898286515379005
+  },
+  "traits": {
+    "chaotic": true
+  },
+  "created": 1777437943462,
+  "lastAsteroidPulse": 15625,
+  "timestamp": 1779054569888,
+  "type": "heartbeat",
+  "stage": "seed",
+  "trait": "entropy_drift"
+}

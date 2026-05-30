@@ -1,0 +1,31 @@
+{
+  "id": "egg-g30whh6d",
+  "state": "incubating",
+  "species": "default",
+  "element": null,
+  "growth": {
+    "value": 59.65375,
+    "rate": 0.003,
+    "multispark": 84,
+    "multiplier": 0.1,
+    "_chaoticTicks": 7
+  },
+  "pulse": {
+    "multiplier": 1
+  },
+  "quarks": {
+    "chaos": 0.060259667688212615,
+    "order": 0.562097607559882,
+    "entropy": 0.06529006714297683,
+    "focus": 0.12425001232625439
+  },
+  "traits": {
+    "chaotic": true
+  },
+  "created": 1777615611590,
+  "lastAsteroidPulse": 15635,
+  "timestamp": 1779054569888,
+  "type": "heartbeat",
+  "stage": "seed",
+  "trait": "entropy_drift"
+}

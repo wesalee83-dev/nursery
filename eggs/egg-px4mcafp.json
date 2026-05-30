@@ -1,0 +1,30 @@
+{
+  "id": "egg-px4mcafp",
+  "state": "incubating",
+  "species": "default",
+  "element": null,
+  "growth": {
+    "value": 44.6725,
+    "rate": 0.003,
+    "multispark": 55,
+    "multiplier": 0.1,
+    "_chaoticTicks": 0
+  },
+  "pulse": {
+    "multiplier": 1
+  },
+  "quarks": {
+    "chaos": 0.08844071902089061,
+    "order": 0.7819124559089011,
+    "entropy": 0.20078696301957638,
+    "focus": 0.3178339777912042
+  },
+  "traits": {
+    "chaotic": false
+  },
+  "created": 1778091060006,
+  "lastAsteroidPulse": 15639,
+  "timestamp": 1779054569888,
+  "type": "heartbeat",
+  "stage": "seed"
+}

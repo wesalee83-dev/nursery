@@ -1,0 +1,31 @@
+{
+  "id": "egg-obpqfna5",
+  "state": "incubating",
+  "species": "default",
+  "element": "undead",
+  "growth": {
+    "value": 97.6995,
+    "rate": 0.003,
+    "multispark": 239,
+    "multiplier": 0.1,
+    "_chaoticTicks": 8
+  },
+  "pulse": {
+    "multiplier": 1
+  },
+  "quarks": {
+    "chaos": 0.5134676969474146,
+    "order": 0.9508145765185332,
+    "entropy": 0.9141898994414281,
+    "focus": 0.19179513908623388
+  },
+  "traits": {
+    "chaotic": true
+  },
+  "created": 1777437943464,
+  "lastAsteroidPulse": 15638,
+  "timestamp": 1779054569888,
+  "type": "heartbeat",
+  "stage": "seed",
+  "trait": "entropy_drift"
+}

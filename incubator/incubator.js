@@ -14,9 +14,11 @@ function createEgg(options = {}) {
         id,
         code: code,
         element: code ? `Sigil-${code}` : "wild",
-        growth: { value: 0 },
+        growth: { value: 1000, rate: 1.0 },
         created: Date.now(),
-        gifts: []
+        gifts: [],
+        source: options.source || 'incubator',
+        content: options.content || null
     };
 
     saveEgg(egg);

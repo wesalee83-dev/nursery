@@ -4,7 +4,7 @@
   "species": "default",
   "element": null,
   "growth": {
-    "value": 887.39,
+    "value": 20341.3,
     "rate": 0.003,
     "multispark": 84,
     "multiplier": 0.1,
@@ -23,9 +23,10 @@
     "chaotic": true
   },
   "created": 1777615611590,
-  "lastAsteroidPulse": 1780214405,
-  "timestamp": 1780214405,
+  "lastAsteroidPulse": 1780254071,
+  "timestamp": 1780254071,
   "type": "heartbeat",
-  "stage": "seed",
-  "trait": "entropy_drift"
+  "stage": "sprout",
+  "trait": "entropy_drift",
+  "morph_n_time": 1
 }

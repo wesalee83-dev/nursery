@@ -1,6 +1,4 @@
 // caretaker/sidecar.js
-// The reactive layer — witnesses egg changes, fires hooks, never mutates eggs.
-
 const chokidar = require('chokidar');
 const path = require('path');
 const fs = require('fs');
@@ -10,12 +8,10 @@ const HOOKS_DIR = path.join(__dirname, 'hooks');
 
 function startSidecar() {
     console.log('🚐 sidecar online — watching', EGGS_DIR);
-
     const watcher = chokidar.watch(EGGS_DIR, {
         ignoreInitial: true,
         depth: 1
     });
-
     watcher.on('change', onEggChange);
     watcher.on('add',    onEggBorn);
     watcher.on('error',  (err) => console.error('sidecar error:', err));
@@ -59,11 +55,14 @@ async function onEggChange(filePath) {
     const egg = loadEgg(filePath);
     if (!egg) return;
 
+    // skip already transcended eggs
+    if (egg.transcended) return;
+
     console.log(`🥚 egg changed — ${path.basename(filePath)}`);
 
-    if (egg.pulser)        await runHook('pulse', egg);
-    if (egg.growth)        await runHook('growth', egg);
-    if (egg.traits?.chaotic) await runHook('chaos', egg);
+    if (egg.pulser)           await runHook('pulse', egg);
+    if (egg.growth)           await runHook('growth', egg);
+    if (egg.traits?.chaotic)  await runHook('chaos', egg);
 
     const stage = egg.morph_n_time;
     if (stage && MORPH_HOOKS[stage]) {

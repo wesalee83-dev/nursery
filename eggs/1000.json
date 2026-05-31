@@ -4,7 +4,7 @@
   "species": "default",
   "element": "fire",
   "growth": {
-    "value": 20384.07,
+    "value": 20498.77,
     "rate": 0.003,
     "multispark": 207,
     "multiplier": 5,
@@ -23,8 +23,8 @@
     "chaotic": true
   },
   "created": 1777437943463,
-  "lastAsteroidPulse": 1780254071,
-  "timestamp": 1780254071,
+  "lastAsteroidPulse": 1780254191,
+  "timestamp": 1780254191,
   "type": "heartbeat",
   "stage": "sprout",
   "trait": "entropy_drift",

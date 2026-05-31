@@ -1,15 +1,17 @@
-#   root-project/nusery/caretaker/caretaker.js
+// caretaker/caretaker.js — conductor
 
 const { loadAllEggs, saveEgg } = require('./io/eggStore');
 const { evolveEgg } = require('./engine/evolution');
 
-function handleEvent(evt) {
+async function handleEvent(evt) {
     const entries = loadAllEggs();
-
+    
     for (const entry of entries) {
-        const updated = evolveEgg(entry.egg, evt, entries);
+        const updated = await evolveEgg(entry.egg, evt, entries);
         saveEgg(entry.file, updated);
     }
 
     return { status: "ok", eggsProcessed: entries.length };
 }
+
+module.exports = { handleEvent };

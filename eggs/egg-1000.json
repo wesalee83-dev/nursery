@@ -3,7 +3,7 @@
   "element": "fire",
   "stage": "sprout",
   "growth": {
-    "value": 2584.25,
+    "value": 20111.47,
     "multiplier": 3.071523755917813,
     "timestamp": 1777272822929,
     "rate": 1,
@@ -18,8 +18,8 @@
   },
   "trait": "entropy_drift",
   "logs": [],
-  "lastAsteroidPulse": 15634,
-  "timestamp": 1779054569888,
+  "lastAsteroidPulse": 1780214405,
+  "timestamp": 1780214405,
   "type": "heartbeat",
   "traits": {
     "chaotic": true

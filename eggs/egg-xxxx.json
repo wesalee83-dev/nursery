@@ -3,7 +3,7 @@
   "element": "undead",
   "stage": "sprout",
   "growth": {
-    "value": 2671.5,
+    "value": 20708.18,
     "multiplier": 1.3400956406250004,
     "timestamp": 1777272822929,
     "rate": 1,
@@ -18,8 +18,8 @@
   },
   "trait": "entropy_drift",
   "logs": [],
-  "lastAsteroidPulse": 15641,
-  "timestamp": 1779054569888,
+  "lastAsteroidPulse": 1780214405,
+  "timestamp": 1780214405,
   "type": "heartbeat",
   "traits": {
     "chaotic": true

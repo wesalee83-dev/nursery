@@ -4,7 +4,7 @@
 const { spawn } = require('child_process');
 const path = require('path');
 
-const EVOLUTION_PY = path.join('/home/wespc/asteroid/core/evolution.py');
+const EVOLUTION_PY = path.join('/home/wespc/asteroid/python/core/evolution.py');
 
 function evolveEgg(egg, evt, allEggs) {
     return new Promise((resolve) => {

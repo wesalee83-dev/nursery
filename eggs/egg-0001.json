@@ -3,7 +3,7 @@
   "element": "earth",
   "stage": "sprout",
   "growth": {
-    "value": 2708.5,
+    "value": 20961.35,
     "multiplier": 5,
     "timestamp": 1777272822929,
     "rate": 1,
@@ -18,8 +18,8 @@
   },
   "trait": "entropy_drift",
   "logs": [],
-  "lastAsteroidPulse": 15631,
-  "timestamp": 1779054569888,
+  "lastAsteroidPulse": 1780214405,
+  "timestamp": 1780214405,
   "type": "heartbeat",
   "traits": {
     "chaotic": true

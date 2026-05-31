@@ -3,7 +3,7 @@
   "state": "incubating",
   "species": "default",
   "growth": {
-    "value": 31605.5,
+    "value": 218633.79,
     "rate": 1,
     "multispark": 326,
     "multiplier": 5,
@@ -16,10 +16,10 @@
     "chaotic": true
   },
   "created": 1777402541380,
-  "lastAsteroidPulse": 15642,
-  "timestamp": 1779054569888,
+  "lastAsteroidPulse": 1780214405,
+  "timestamp": 1780214405,
   "type": "heartbeat",
-  "stage": "sapling",
+  "stage": "young-tree",
   "quarks": {
     "chaos": 0.5078943401466922,
     "order": 0.15178745652454495,

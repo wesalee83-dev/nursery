@@ -3,7 +3,7 @@
   "code": "0800",
   "element": "Sigil-0800",
   "growth": {
-    "value": 65791.58,
+    "value": 76952.89,
     "rate": 0.003,
     "multispark": 25,
     "multiplier": 0.1,
@@ -14,8 +14,8 @@
   "traits": {
     "chaotic": true
   },
-  "lastAsteroidPulse": 1780312681,
-  "timestamp": 1780312681,
+  "lastAsteroidPulse": 1780321538,
+  "timestamp": 1780321538,
   "type": "heartbeat",
   "stage": "young-tree",
   "quarks": {

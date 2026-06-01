@@ -3,7 +3,7 @@
   "code": null,
   "element": "wild",
   "growth": {
-    "value": 65784.19,
+    "value": 76944.98,
     "rate": 0.003,
     "multispark": 15,
     "multiplier": 0.44416059618746556,
@@ -14,8 +14,8 @@
   "traits": {
     "chaotic": true
   },
-  "lastAsteroidPulse": 1780312681,
-  "timestamp": 1780312681,
+  "lastAsteroidPulse": 1780321538,
+  "timestamp": 1780321538,
   "type": "heartbeat",
   "stage": "young-tree",
   "quarks": {

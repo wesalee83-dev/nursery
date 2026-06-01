@@ -4,7 +4,7 @@
   "species": "default",
   "element": "undead",
   "growth": {
-    "value": 78959.16,
+    "value": 79626.74,
     "rate": 0.003,
     "multispark": 239,
     "multiplier": 0.1,
@@ -23,8 +23,8 @@
     "chaotic": true
   },
   "created": 1777437943464,
-  "lastAsteroidPulse": 1780323039,
-  "timestamp": 1780323039,
+  "lastAsteroidPulse": 1780323549,
+  "timestamp": 1780323549,
   "type": "heartbeat",
   "stage": "young-tree",
   "trait": "entropy_drift",

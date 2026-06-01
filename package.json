@@ -1,0 +1,16 @@
+{
+  "name": "nursery",
+  "version": "0.1.0",
+  "description": "Chokar timekeeper + sequencer development ground",
+  "main": "src/chokar.js",
+  "scripts": {
+    "start": "node src/chokar.js",
+    "test": "node --test src/*.test.js",
+    "dev": "node --watch src/chokar.js"
+  },
+  "keywords": ["chokar", "sequencer", "agents", "scheduler"],
+  "author": "wesalee83-dev",
+  "license": "MIT",
+  "dependencies": {},
+  "devDependencies": {}
+}

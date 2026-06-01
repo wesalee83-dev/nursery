@@ -3,7 +3,7 @@
   "code": "0420",
   "element": "Sigil-0420",
   "growth": {
-    "value": 20430.69,
+    "value": 65570.53,
     "rate": 0.003,
     "multispark": 24,
     "multiplier": 0.1,
@@ -14,10 +14,10 @@
   "traits": {
     "chaotic": true
   },
-  "lastAsteroidPulse": 1780254191,
-  "timestamp": 1780254191,
+  "lastAsteroidPulse": 1780312500,
+  "timestamp": 1780312500,
   "type": "heartbeat",
-  "stage": "sprout",
+  "stage": "young-tree",
   "quarks": {
     "chaos": 0.44758215648751826,
     "order": 0.8540131426206149,
@@ -25,5 +25,5 @@
     "focus": 0.15250884811492071
   },
   "trait": "entropy_drift",
-  "morph_n_time": 1
+  "morph_n_time": 2
 }

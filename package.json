@@ -8,9 +8,15 @@
     "test": "node --test src/*.test.js",
     "dev": "node --watch src/chokar.js"
   },
-  "keywords": ["chokar", "sequencer", "agents", "scheduler"],
+  "keywords": [
+    "chokar",
+    "sequencer",
+    "agents",
+    "scheduler"
+  ],
   "author": "wesalee83-dev",
   "license": "MIT",
-  "dependencies": {},
-  "devDependencies": {}
+  "dependencies": {
+    "dotenv": "^17.4.2"
+  }
 }

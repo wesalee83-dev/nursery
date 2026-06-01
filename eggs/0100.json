@@ -4,7 +4,7 @@
   "species": "default",
   "element": "water",
   "growth": {
-    "value": 65659.31,
+    "value": 65880.33,
     "rate": 0.003,
     "multispark": 228,
     "multiplier": 0.1,
@@ -23,8 +23,8 @@
     "chaotic": true
   },
   "created": 1777437943463,
-  "lastAsteroidPulse": 1780312500,
-  "timestamp": 1780312500,
+  "lastAsteroidPulse": 1780312681,
+  "timestamp": 1780312681,
   "type": "heartbeat",
   "stage": "young-tree",
   "trait": "entropy_drift",

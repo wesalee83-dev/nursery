@@ -4,7 +4,7 @@
   "species": "default",
   "element": null,
   "growth": {
-    "value": 65544.24,
+    "value": 65765.12,
     "rate": 0.003,
     "multispark": 55,
     "multiplier": 0.1,
@@ -23,8 +23,8 @@
     "chaotic": false
   },
   "created": 1778091060006,
-  "lastAsteroidPulse": 1780312501,
-  "timestamp": 1780312501,
+  "lastAsteroidPulse": 1780312681,
+  "timestamp": 1780312681,
   "type": "heartbeat",
   "stage": "young-tree",
   "morph_n_time": 2

@@ -21,3 +21,4 @@ You mentioned there are already a ton of seeds and a mini-forest going. This fol
 - **Oscar** — Builds the actual structures and irrigation (automation)
 
 See `../MYCELIAL.md` and `../SYSTEM.md` for overall philosophy.
+# git-town

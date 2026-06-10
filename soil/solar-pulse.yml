@@ -1,0 +1,5 @@
+# solar-pulse.yaml
+cycle_hours: 24.133
+genesis: "1983-08-07T07:16:00"
+current_stage: soil
+next_advance: auto

@@ -1,18 +1,11 @@
 {
   "name": "nursery",
-  "version": "0.1.0",
-  "description": "Chokar timekeeper + sequencer — bob's JS world",
-  "type": "module",
-  "main": "src/watcher.js",
+  "version": "0.1.0-mycelial",
+  "description": "Caretaker layer for the mycelial egg ecosystem",
+  "main": "caretaker/caretaker.js",
   "scripts": {
-    "start": "node src/watcher.js",
-    "test": "node --test src/*.test.js",
-    "dev": "node --watch src/watcher.js"
-  },
-  "author": "wesalee83-dev",
-  "license": "MIT",
-  "dependencies": {
-    "dotenv": "^16.4.5"
-  },
-  "devDependencies": {}
+    "start": "node caretaker/caretaker.js",
+    "test": "echo \"Eggs are growing... no tests yet\"",
+    "heartbeat": "node caretaker/watcher.js"
+  }
 }

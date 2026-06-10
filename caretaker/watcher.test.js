@@ -2,7 +2,7 @@ import { describe, it } from 'node:test';
 import assert from 'node:assert';
 import { activeAgents, nextRotation } from './watcher.js';
 
-describe('watcher / chokar', () => {
+describe('watcher', () => {
   it('oscar is always active', () => {
     assert.ok(activeAgents().includes('oscar'));
   });

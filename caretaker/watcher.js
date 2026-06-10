@@ -8,6 +8,7 @@
 import 'dotenv/config';
 import fs from 'node:fs/promises';
 import path from 'node:path';
+import { fileURLToPath } from 'node:url';
 
 const OLLAMA       = process.env.OLLAMA_HOST      ?? 'http://localhost:11434';
 const BOB_MODEL    = process.env.OLLAMA_BOB_MODEL ?? 'bob';
@@ -212,4 +213,11 @@ async function boot() {
   schedule1111();
 }
 
-boot();
+
+if (process.argv[1] === fileURLToPath(import.meta.url)) {
+  boot();
+}
+
+if (process.argv[1] === fileURLToPath(import.meta.url)) {
+  boot();
+}

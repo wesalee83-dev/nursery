@@ -5,7 +5,7 @@
   "main": "caretaker/caretaker.js",
   "scripts": {
     "start": "node caretaker/caretaker.js",
-    "test": "echo \"Eggs are growing... no tests yet\"",
+    "test": "node --test caretaker/watcher.test.js",
     "heartbeat": "node caretaker/watcher.js"
   }
 }

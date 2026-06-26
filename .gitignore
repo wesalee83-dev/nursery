@@ -4,3 +4,10 @@ node_modules/
 *.log
 .env
 actions-runner/
+eggs/
+incubator/eggs/
+typescript-language-server/
+.~lock.*
+CENSUS.md
+appearance.json
+watcher.py

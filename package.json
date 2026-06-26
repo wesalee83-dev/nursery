@@ -11,5 +11,6 @@
   "dependencies": {
     "dotenv": "^17.4.2",
     "pnpm": "^11.9.0"
-  }
+  },
+  "type": "module"
 }

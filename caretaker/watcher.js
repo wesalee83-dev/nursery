@@ -14,25 +14,25 @@ import 'dotenv/config';
 import fs from 'node:fs/promises';
 import path from 'node:path';
 import { fileURLToPath } from 'node:url';
-// top of watcher.js
-import 'dotenv/config'; // fine for prod too, just a no-op if no .env
+import { fullTally } from './tally.js';
+
 // Ollama's native API, port 11434. (LM Studio used 1234 — no longer in play.)
-const OLLAMA       = process.env.OLLAMA_HOST      ?? 'http://localhost:11434'; // Ollama
-const BOB_MODEL    = process.env.OLLAMA_BOB_MODEL ?? 'llama3.1';
-const W3Z_MODEL    = process.env.OLLAMA_W3Z_MODEL ?? 'llama3.1';
-const PULSE_PATH    = process.env.PULSE_PATH       ?? '/home/wespc/vault/PULSE.md';
-const BUILDS_PATH   = process.env.BUILDS_PATH      ?? '/home/wespc/vault/BUILDS.md';
+const OLLAMA      = process.env.OLLAMA_HOST      ?? 'http://localhost:11434';
+const BOB_MODEL   = process.env.OLLAMA_BOB_MODEL ?? 'llama3.1';
+const W3Z_MODEL   = process.env.OLLAMA_W3Z_MODEL ?? 'llama3.1';
+const PULSE_PATH  = process.env.PULSE_PATH       ?? '/home/wespc/vault/PULSE.md';
+const BUILDS_PATH = process.env.BUILDS_PATH      ?? '/home/wespc/vault/BUILDS.md';
 // FIXED: was '.../nursery/incubator/eggs' — tally.js counts '.../nursery/eggs'.
-const EGGS_PATH     = process.env.NURSERY_EGGS     ?? '/home/wespc/root-project/nursery/eggs';
+const EGGS_PATH   = process.env.NURSERY_EGGS     ?? '/home/wespc/root-project/nursery/eggs';
 
 const HEARTBEAT_MS = 30_000;
 
 // ── Agent roster ─────────────────────────────────────────────────────────────
 
 const AGENTS = {
-  trillian:        { active: 'diurnal',   hours: [6, 22],  model: W3Z_MODEL },
-  'stoned-willey': { active: 'nocturnal', hours: [22, 6],  model: BOB_MODEL },
-  oscar:           { active: 'always',    hours: [0, 24],  model: BOB_MODEL },
+  trillian:        { active: 'diurnal',   hours: [6, 22], model: W3Z_MODEL },
+  'stoned-willey': { active: 'nocturnal', hours: [22, 6], model: BOB_MODEL },
+  oscar:           { active: 'always',    hours: [0, 24], model: BOB_MODEL },
 };
 
 export function currentHour() {
@@ -107,11 +107,13 @@ async function appendVault(filePath, entry) {
 // ── Heartbeat ─────────────────────────────────────────────────────────────────
 
 async function heartbeat() {
-  const now   = new Date().toISOString();
+  const now  = new Date().toISOString();
   const alive = activeAgents();
   const rot   = nextRotation();
 
   console.log(`[${now}] 💓 heartbeat — active: ${alive.join(', ')} — next rotation in ${rot.hoursUntil}h`);
+
+  fullTally(); // 🌍 census on every heartbeat
 
   const { alive: ollamaUp, models } = await pingOllama();
   if (!ollamaUp) {
@@ -213,7 +215,10 @@ async function boot() {
 
   // confirm llama3.1 actually responds, not just that ollama is alive
   const { ok, response } = await callAgent(BOB_MODEL, 'Reply with one word: awake.');
-  console.log(ok ? `[watcher] 🧠 ${BOB_MODEL} invoked ✓ — said: "${response}"` : `[watcher] 🧠 ${BOB_MODEL} invoke failed`);
+  console.log(ok
+    ? `[watcher] 🧠 ${BOB_MODEL} invoked ✓ — said: "${response}"`
+    : `[watcher] 🧠 ${BOB_MODEL} invoke failed`
+  );
 
   setInterval(heartbeat, HEARTBEAT_MS);
   schedule1111();

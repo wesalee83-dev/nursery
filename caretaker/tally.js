@@ -1,6 +1,6 @@
 // tally.js — full organism census
-const fs = require('fs');
-const path = require('path');
+import fs from 'fs';
+import path from 'path';
 
 const ROOT = '/home/wespc/root-project';
 const VAULT = path.join(ROOT, 'vault');
@@ -21,7 +21,7 @@ function countEggs(dir) {
     } catch(e) { return 0; }
 }
 
-function fullTally() {
+export function fullTally() {
     const stamp = new Date().toISOString();
     const time = new Date().toLocaleTimeString();
 
@@ -38,7 +38,6 @@ function fullTally() {
     }
     console.log(`  📦 total: ${total}\n`);
 
-    // write to vault/CENSUS.md
     try {
         const line = [
             `\n## ${stamp}`,
@@ -54,5 +53,3 @@ function fullTally() {
         console.warn('tally: could not write to vault:', e.message);
     }
 }
-
-module.exports = { fullTally };

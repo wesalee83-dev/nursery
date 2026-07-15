@@ -17,11 +17,13 @@ import { fileURLToPath } from 'node:url';
 import { fullTally } from './tally.js';
 
 // Ollama's native API, port 11434. (LM Studio used 1234 — no longer in play.)
-const OLLAMA      = process.env.OLLAMA_HOST      ?? 'http://localhost:11434';
-const BOB_MODEL   = process.env.OLLAMA_BOB_MODEL ?? 'llama3.1';
-const W3Z_MODEL   = process.env.OLLAMA_W3Z_MODEL ?? 'llama3.1';
-const PULSE_PATH  = process.env.PULSE_PATH       ?? '/home/wespc/vault/PULSE.md';
-const BUILDS_PATH = process.env.BUILDS_PATH      ?? '/home/wespc/vault/BUILDS.md';
+const OLLAMA        = process.env.OLLAMA_HOST        ?? 'http://localhost:11434';
+const BOB_MODEL     = process.env.OLLAMA_BOB_MODEL   ?? 'qwen2.5:0.5b';
+const W3Z_MODEL     = process.env.OLLAMA_W3Z_MODEL   ?? 'qwen2.5:0.5b';
+// used automatically if the primary model call fails (e.g. not enough RAM loaded)
+const FALLBACK_MODEL = process.env.OLLAMA_FALLBACK_MODEL ?? 'qwen2.5:0.5b';
+const PULSE_PATH  = process.env.PULSE_PATH       ?? '/home/wespc/root-project/vault/PULSE.md';
+const BUILDS_PATH = process.env.BUILDS_PATH      ?? '/home/wespc/root-project/vault/BUILDS.md';
 // FIXED: was '.../nursery/incubator/eggs' — tally.js counts '.../nursery/eggs'.
 const EGGS_PATH   = process.env.NURSERY_EGGS     ?? '/home/wespc/root-project/nursery/eggs';
 
@@ -74,7 +76,7 @@ export async function pingOllama() {
   }
 }
 
-export async function callAgent(model, prompt) {
+async function callAgentOnce(model, prompt) {
   try {
     const res = await fetch(`${OLLAMA}/v1/chat/completions`, {
       method: 'POST',
@@ -85,13 +87,31 @@ export async function callAgent(model, prompt) {
         stream: false,
       }),
     });
-    if (!res.ok) return { ok: false, response: null };
+    if (!res.ok) {
+      const errBody = await res.json().catch(() => null);
+      return { ok: false, response: null, error: errBody?.error?.message ?? `HTTP ${res.status}` };
+    }
     const data = await res.json();
     const response = data.choices?.[0]?.message?.content ?? null;
     return { ok: !!response, response };
   } catch (err) {
     return { ok: false, response: null, error: err.message };
   }
+}
+
+export async function callAgent(model, prompt) {
+  const primary = await callAgentOnce(model, prompt);
+  if (primary.ok) return primary;
+
+  if (model !== FALLBACK_MODEL) {
+    console.warn(`[watcher] ⚠ ${model} call failed (${primary.error ?? 'unknown error'}) — retrying with fallback: ${FALLBACK_MODEL}`);
+    const fallback = await callAgentOnce(FALLBACK_MODEL, prompt);
+    if (fallback.ok) return fallback;
+    console.warn(`[watcher] ⚠ fallback ${FALLBACK_MODEL} also failed (${fallback.error ?? 'unknown error'})`);
+    return fallback;
+  }
+
+  return primary;
 }
 
 // ── Vault writers ─────────────────────────────────────────────────────────────
@@ -151,6 +171,24 @@ async function ritual1111() {
     name:        eggName,
     born:        now.toISOString(),
     stage:       0,
+    species:     'default',
+    element:     'earth',
+    growth: {
+      value:         0,
+      rate:          0.003,
+      multispark:    0,
+      multiplier:    0.1,
+      _chaoticTicks: 0,
+    },
+    pulse: {
+      multiplier: 1,
+    },
+    quarks: {
+      order:   Math.random(),
+      entropy: Math.random(),
+      chaos:   Math.random(),
+      focus:   Math.random(),
+    },
     traits:      {},
     morphStage:  0,
     observation: ok ? response : 'born in silence',
@@ -171,15 +209,6 @@ async function ritual1111() {
     PULSE_PATH,
     `\n## ${now.toISOString()} — birth\n**${eggName}** entered the nursery.\n${ok ? response : '_born in silence_'}`
   );
-}
-
-function parseEggName(response) {
-  try {
-    const json = JSON.parse(response);
-    return json.name ?? `egg-${Date.now()}`;
-  } catch {
-    return `egg-${Date.now()}`;
-  }
 }
 
 // ── Scheduler ─────────────────────────────────────────────────────────────────
@@ -213,11 +242,11 @@ async function boot() {
 
   await heartbeat();
 
-  // confirm llama3.1 actually responds, not just that ollama is alive
-  const { ok, response } = await callAgent(BOB_MODEL, 'Reply with one word: awake.');
+  // confirm the model actually responds, not just that ollama is alive
+  const { ok, response, error } = await callAgent(BOB_MODEL, 'Reply with one word: awake.');
   console.log(ok
     ? `[watcher] 🧠 ${BOB_MODEL} invoked ✓ — said: "${response}"`
-    : `[watcher] 🧠 ${BOB_MODEL} invoke failed`
+    : `[watcher] 🧠 ${BOB_MODEL} invoke failed — ${error ?? 'no error detail returned'}`
   );
 
   setInterval(heartbeat, HEARTBEAT_MS);
